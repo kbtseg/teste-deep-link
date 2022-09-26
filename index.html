@@ -27,29 +27,29 @@
     }
 
     function onLoad(){
-       var urlLink1 = "http://www.instagram.com/rioclaroloterias";
-       var urlLink2 = "http://www.facebook.com/rioclaroloterias";
+       var urlLink2 = "http://www.instagram.com/rioclaroloterias";
+       var urlLink1 = "http://www.facebook.com/rioclaroloterias";
        switch(getMobileOperatingSystem()){
            case 'Android':
-                urlLink1 = "instagram://user?username=rioclaroloterias";
-                urlLink2 = "facebook://user?username=rioclaroloterias";
+                urlLink2 = "instagram://user?username=rioclaroloterias";
+                urlLink1 = "facebook://user?username=rioclaroloterias";
                 break;
            case 'iOS':
-                urlLink1 = "instagram://user?username=orioclaroloterias";
-                urlLink2 = "facebook://user?username=rioclaroloterias";
+                urlLink2 = "instagram://user?username=orioclaroloterias";
+                urlLink1 = "facebook://user?username=rioclaroloterias";
                 break;
            default:
                 break;
         }
-       document.getElementById('yourLink1').setAttribute('href', urlLink1);
        document.getElementById('yourLink2').setAttribute('href', urlLink2);
+       document.getElementById('yourLink1').setAttribute('href', urlLink1);
       
     }
     window.onload = onLoad;
     </script>
     
-    <a id="yourLink1" class="grey-text text-lighten-3" target="_blank">Link1</a>
     <a id="yourLink2" class="grey-text text-lighten-3" target="_blank">Link2</a>
+    <a id="yourLink1" class="grey-text text-lighten-3" target="_blank">Link1</a>
     
 
 
