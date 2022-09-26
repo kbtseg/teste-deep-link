@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    function getMobileOperatingSystem() {
+       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+       if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
+       {
+          return 'iOS';
+       }
+       else if( userAgent.match( /Android/i ) )
+       {
+          return 'Android';
+       }
+       else
+       {
+          return 'unknown';
+       }
+    }
+
+    function onLoad(){
+       var urlLink1 = "http://www.instagram.com/rioclaroloterias";
+       var urlLink2 = "http://www.facebook.com/rioclaroloterias";
+       switch(getMobileOperatingSystem()){
+           case 'Android':
+                urlLink1 = "instagram://user?username=rioclaroloterias";
+                urlLink2 = "facebook://user?username=rioclaroloterias";
+                break;
+           case 'iOS':
+                urlLink1 = "instagram://user?username=orioclaroloterias";
+                urlLink2 = "facebook://user?username=rioclaroloterias";
+                break;
+           default:
+                break;
+        }
+       document.getElementById('yourLink1').setAttribute('href', urlLink1);
+       document.getElementById('yourLink2').setAttribute('href', urlLink2);
+      
+    }
+    window.onload = onLoad;
+    </script>
+    
+    <a id="yourLink1" class="grey-text text-lighten-3" target="_blank">Link1</a>
+    <a id="yourLink2" class="grey-text text-lighten-3" target="_blank">Link2</a>
+    
+
+
+</body>
+</html>
